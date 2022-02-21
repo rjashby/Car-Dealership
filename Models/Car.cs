@@ -3,21 +3,21 @@ using System;
 namespace Dealership.Models {
 
   public class Car
-  {
-    private string _makeModel;
-    private int _price;
-    private int _miles;
+{
+    // Public auto-implemented properties
+    public string MakeModel { get; set; }
+    public int Price { get; set; }
+    public int Miles { get; set; }
 
-    public Car(string makeModel, int price, int miles)
-    {
-      _makeModel = makeModel;
-      _price = price;
-      _miles = miles;
-    }
+    public int OffRoadAbility {get; set;}
 
-    public void SetPrice(int newPrice)
+    // Constructor
+    public Car(string makeModel, int price, int miles, int offRoadAbility) 
     {
-      _price = newPrice;
+        MakeModel = makeModel;
+        Price = price;
+        Miles = miles;
+        OffRoadAbility = offRoadAbility;
     }
 
     public static string MakeSound(string sound)
@@ -25,24 +25,14 @@ namespace Dealership.Models {
       return "Our cars sound like " + sound;
     }
 
-    public string GetMakeModel()
-    {
-      return _makeModel;
-    }
-
-    public int GetPrice()
-    {
-      return _price;
-    }
-
-    public int GetMiles()
-    {
-      return _miles;
-    }
-
     public bool WorthBuying(int maxPrice)
     {
-      return (_price <= maxPrice);
+      return (Price <= maxPrice);
+    }
+
+    public void SalePrice(int myReduceAmount)
+    {
+      Price = Price - ((Price * myReduceAmount) / 100); 
     }
   }
 
