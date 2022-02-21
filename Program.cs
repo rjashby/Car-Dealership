@@ -1,23 +1,27 @@
 using System;
 using System.Collections.Generic;
 using Dealership.Models;
+using System.Linq;
 
 namespace Dealership {
-
   public class Program
   {
-    public static void Main()
+
+  public static void Main()
     {
       Car volkswagen = new Car("1974 Volkswagen Thing", 1100, 368792, 76);
       Car yugo = new Car("1980 Yugo Koral", 700, 56000, 13);
       Car ford = new Car("1988 Ford Country Squire", 1400, 239001, 3);
       Car amc = new Car("1976 AMC Pacer", 400, 198000, 93);
-
       List<Car> Cars = new List<Car>() { volkswagen, yugo, ford, amc };
-      Console.WriteLine("What should our percent off be?");
-      int myPercentoff = Convert.ToInt32(Console.ReadLine());
-      // yugo.MakeModel = "2020 Tesla";
-      // yugo.Price = 400;
+      
+    // SET PROPERTIES OR GET PROPERTIES
+
+    // yugo.MakeModel = "2020 Tesla";
+    // yugo.Price = 400;
+    // Console.WriteLine(amc.Miles);
+
+    //  MAX PRICE METHOD
 
     //   Console.WriteLine("Enter maximum price: ");
     //   string stringMaxPrice = Console.ReadLine();
@@ -41,20 +45,29 @@ namespace Dealership {
     //     Console.WriteLine("$" + automobile.Price);
     //   }
     // }
-    foreach(Car autos in Cars)
-    {
-      autos.SalePrice(myPercentoff);
-      Console.WriteLine("----------------------");
-      Console.WriteLine("Our Cars are now " + myPercentoff + "% off");
-      Console.WriteLine(autos.MakeModel);
-      Console.WriteLine("$" + autos.Price);
-    }
-    Cars.Sort()
-    foreach(Car autos in Cars)
-    {
-      // autos.Sort(OffRoadAbility);
-    }
-  }
 
+    //  PERCENTAGE OFF METHOD
+
+    // foreach(Car autos in Cars)
+    // {
+    //   autos.SalePrice(myPercentoff);
+    //   Console.WriteLine("----------------------");
+    //   Console.WriteLine("Our Cars are now " + myPercentoff + "% off");
+    //   Console.WriteLine(autos.MakeModel);
+    //   Console.WriteLine("$" + autos.Price);
+    // }
+
+    // SORTED LIST AND KEY/VALUE PAIR SORTING
+    
+    // SortedList<string, int> rallyCars = new SortedList<string, int>();
+    //   rallyCars.Add(Cars[0].MakeModel, Cars[0].OffRoadAbility);
+    //   rallyCars.Add(Cars[1].MakeModel, Cars[1].OffRoadAbility);
+    //   rallyCars.Add(Cars[2].MakeModel, Cars[2].OffRoadAbility);
+    //   rallyCars.Add(Cars[3].MakeModel, Cars[3].OffRoadAbility);
+    //   foreach (KeyValuePair<string, int> car in rallyCars.OrderBy(key => key.Value))  
+    //   {  
+    //     Console.WriteLine("{0}, {1}", car.Key, car.Value);  
+    //   }  
+  }
 }
 }
