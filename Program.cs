@@ -9,12 +9,17 @@ namespace Dealership {
 
   public static void Main()
     {
-      Car volkswagen = new Car("1974 Volkswagen Thing", 1100, 368792, 76);
-      Car yugo = new Car("1980 Yugo Koral", 700, 56000, 13);
-      Car ford = new Car("1988 Ford Country Squire", 1400, 239001, 3);
-      Car amc = new Car("1976 AMC Pacer", 400, 198000, 93);
+      Car volkswagen = new Car("Volkswagen Thing", 1974, 1100, 368792, 76);
+      Car yugo = new Car("Yugo Koral", 1980, 700, 56000, 13);
+      Car ford = new Car("Ford Country Squire", 1988, 1400, 239001, 3);
+      Car amc = new Car("AMC Pacer", 1976, 400, 198000, 93);
       List<Car> Cars = new List<Car>() { volkswagen, yugo, ford, amc };
-      
+        
+
+      foreach(Car auto in Cars) {
+        auto.YearBasedPrice();
+        Console.WriteLine("Your " + auto.MakeModel + " is worth $" + auto.Price);
+      }
     // SET PROPERTIES OR GET PROPERTIES
 
     // yugo.MakeModel = "2020 Tesla";
