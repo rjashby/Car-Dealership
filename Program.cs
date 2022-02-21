@@ -15,7 +15,7 @@ namespace Dealership {
       Car amc = new Car("AMC Pacer", 1976, 400, 198000, 93);
       List<Car> Cars = new List<Car>() { volkswagen, yugo, ford, amc };
         
-
+    //Change price based on car year
       foreach(Car auto in Cars) {
         auto.YearBasedPrice();
         Console.WriteLine("Your " + auto.MakeModel + " is worth $" + auto.Price);
